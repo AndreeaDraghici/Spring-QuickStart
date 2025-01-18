@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile # Specify the Dockerfile to use
+    container_name: demo-app # Explicitly set container name
+    image: demo-image:latest # Name the image
+    ports:
+      - "8081:8081" # Map host port 8081 to container port 8081
+    environment:
+      SPRING_PROFILES_ACTIVE: prod # Example: Set active Spring profile
